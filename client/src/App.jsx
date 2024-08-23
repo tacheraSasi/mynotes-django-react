@@ -6,25 +6,6 @@ import EkiliRelay from 'ekilirelay'
 
 function App() {
   const [count, setCount] = useState(0)
-  const sdk = new EkiliRelay()
-
-  const send = ()=>{
-    setCount((count) => count + 1)
-    // Send an email
-    sdk.sendEmail('tacherasasi@gmail.com', 'Test Subject', 'This is a test message.', 'From: Work <support@ekilie.com>')
-    .then(response => {
-      if (response.status === 'success') {
-        console.log('Email sent successfully.');
-      } else {
-        console.log('Failed to send email: ' + response.message);
-        console.log(response);
-      }
-    })
-    .catch(error => {
-      console.log('Error:', error);
-    });
-    console.log("clicked")
-  }
 
   return (
     <>
